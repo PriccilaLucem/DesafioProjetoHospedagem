@@ -14,8 +14,10 @@ public class Pessoa
         Nome = nome;
         Sobrenome = sobrenome;
     }
-
-    public string Nome { get; set; }
-    public string Sobrenome { get; set; }
-    public string NomeCompleto => $"{Nome} {Sobrenome}".ToUpper();
+    private string _nome;
+    private string _sobrenome;
+    private string _nomeCompleto =>$"{Nome} {Sobrenome}".ToUpper();
+    public string Nome { get => _nome; set => _nome = value; }
+    public string Sobrenome { get => _sobrenome; set => _sobrenome = value; }
+    public string NomeCompleto => _nomeCompleto;
 }
